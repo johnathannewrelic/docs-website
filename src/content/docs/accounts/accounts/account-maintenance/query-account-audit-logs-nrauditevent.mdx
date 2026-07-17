@@ -26,13 +26,12 @@ The `NrAuditEvent` is created to record some important types of configuration ch
 
 * Users added or deleted
 * User permission changes
-* Login and logout events
+* User ogin and logout events
 * Account changes made via API
 * [Synthetic monitor changes](/docs/synthetics/new-relic-synthetics/administration/audit-synthetics-account-changes)
 * Dashboard creation, deletion, updates, and [public sharing](/docs/query-your-data/explore-query-data/dashboards/share-dashboards-publicly/#audit-trail-dashboard)
 * Workload configuration changes
 
-User, permission, and login events are only written to the parent/reporting account ID of your New Relic organization.
 
 To see all the attributes reported by this event, see [`NrAuditEvent`](/attribute-dictionary/?event=NrAuditEvent).
 
@@ -40,11 +39,11 @@ To be notified about these types of changes, you can use [alerts](/docs/alerts/n
 
 ## Caveats and details on using `NrAuditEvent` [#retention]
 
-All New Relic accounts can query up to 13 months of account changes.
+* User addition/deletion and permission changes, as well as user login events are only written to the parent/reporting account ID of your New Relic organization.
 
-If your New Relic organization and accounts were created using the [Partnership API](/docs/new-relic-partnerships/partner-integration-guide/partner-account-maintenance/partner-api), `NrAuditEvent` won't return information about creating or editing accounts.
+* All New Relic accounts can query up to 13 months of account changes.
 
-Audit logging is different than configuring [audit mode](/docs/agents/manage-apm-agents/configuration/log-audit-all-data-your-new-relic-agent-transmits) for an <InlinePopover type="apm"/> agent. APM audit mode records information about all data being transmitted from your app.
+* Audit logging is different than configuring [audit mode](/docs/agents/manage-apm-agents/configuration/log-audit-all-data-your-new-relic-agent-transmits) for an <InlinePopover type="apm"/> agent. APM audit mode records information about all data being transmitted from your app.
 
 ## Example queries [#default-attributes]
 
